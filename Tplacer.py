@@ -34,5 +34,15 @@ with open(abs_file_path ,'rU') as f:
     line_count = len(f.readlines())
 
 while input_line<=line_count:
+    line =  getline(abs_file_path, input_line)  
+
+    #ingore space line
+    if line.split():                                    
+        pass
+    else:                                               
+        input_line=input_line+1
     
+    line = line.split()
+    if line[0] == '.SUBCKT':
+        cell_name = line[1]
     
